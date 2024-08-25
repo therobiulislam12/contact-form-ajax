@@ -54,7 +54,7 @@ final class R_Contact_Form {
         if ( is_admin() ) {
            
         } else {
-
+            new ContactForm\Frontend();
         }
 
     }
