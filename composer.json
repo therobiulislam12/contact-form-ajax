@@ -1,0 +1,17 @@
+{
+    "name": "therobiulislam12/contact-form-ajax",
+    "description": "Simple Contact form ajax practice plugin",
+    "autoload": {
+        "psr-4": {
+            "ContactForm\\": "includes/"
+        },
+        "files": ["includes/functions.php"]
+    },
+    "authors": [
+        {
+            "name": "Robiul Islam",
+            "email": "therobiulislam12@gmail.com"
+        }
+    ],
+    "require": {}
+}

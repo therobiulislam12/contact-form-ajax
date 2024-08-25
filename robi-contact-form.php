@@ -13,6 +13,8 @@
  * Text Domain:      simple-contact-form
  */
 
+require_once __DIR__ . 'vendor/autoload.php';
+
  // check if anyone try to access our plugin
 if ( !defined( 'ABSPATH' ) ) {
     header( 'Location: /' );
