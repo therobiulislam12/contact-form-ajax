@@ -3,7 +3,7 @@
         'name' => 'therobiulislam12/contact-form-ajax',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'dddc787f3748b0637f4be420126569b794d6d5bc',
+        'reference' => '3decf5f3ca0fd3fd355c87a8f8911c051977a533',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'therobiulislam12/contact-form-ajax' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'dddc787f3748b0637f4be420126569b794d6d5bc',
+            'reference' => '3decf5f3ca0fd3fd355c87a8f8911c051977a533',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
