@@ -34,8 +34,8 @@ class Menu {
         );
         add_submenu_page(
             $parent_slug,
-            __('General Setting', 'simple-contact-form'),
-            __('General Setting', 'simple-contact-form'),
+            __('General Settings', 'simple-contact-form'),
+            __('General Settings', 'simple-contact-form'),
             $capability,
             'rcf_details',
             array($this,'rcf_form_menu_details'),
