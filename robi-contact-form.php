@@ -15,14 +15,14 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
- // check if anyone try to access our plugin
+// check if anyone try to access our plugin
 if ( !defined( 'ABSPATH' ) ) {
     header( 'Location: /' );
     exit();
 }
 
 // create final class
-final class R_Contact_Form{
+final class R_Contact_Form {
 
     const version = '1.0.0';
 
@@ -32,25 +32,27 @@ final class R_Contact_Form{
     /**
      * Main Constructor Method
      */
-    public function __construct(){
+    public function __construct() {
         // call all constant
         $this->define_constant();
 
         // after plugin loaded hook
-        add_action('plugin_loaded', array($this, 'rsf_init_plugin'));
+        add_action( 'plugin_loaded', array( $this, 'rsf_init_plugin' ) );
+
+        // admin menu action hook call
+        add_action( 'admin_menu', array( $this, 'rcf_admin_menu_register' ) );
+
     }
 
     /**
      * This function call after plugins loaded
-     * 
+     *
      * @return void
      */
-    public function rsf_init_plugin(){
+    public function rsf_init_plugin() {
 
-        
-        
-        if(is_admin()){
-
+        if ( is_admin() ) {
+           
         } else {
 
         }
@@ -61,7 +63,7 @@ final class R_Contact_Form{
      * Define all constant
      * @return void
      */
-    public function define_constant(){
+    public function define_constant() {
         define( 'R_SIMPLE_FORM_VERSION', self::version );
         define( 'R_SIMPLE_FORM_FILE', __FILE__ );
         define( 'R_SIMPLE_FORM_PATH', __DIR__ );
@@ -72,23 +74,32 @@ final class R_Contact_Form{
      * Create a Instance here
      * @return R_Contact_Form
      */
-    public static function getInstance(){
-        if(!self::$_instance){
+    public static function getInstance() {
+        if ( !self::$_instance ) {
             self::$_instance = new self();
         }
 
         return self::$_instance;
     }
+
+    /**
+     * Menu Register
+     * 
+     * @return void
+     */
+    public function rcf_admin_menu_register(){
+        $menu = new ContactForm\Admin\Menu;
+        $menu->rcf_admin_menu_register_func();
+    }
 }
 
 /**
- * Call the class 
+ * Call the class
  * @return R_Contact_Form
  */
-function r_contact_form(){
+function r_contact_form() {
     return R_Contact_Form::getInstance();
 }
 
 // kick of the function
 r_contact_form();
-
